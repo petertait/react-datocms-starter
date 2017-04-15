@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet';
 import dato from '../dato'
 
 class Articles extends Component {
@@ -12,21 +13,30 @@ class Articles extends Component {
       .then((articles) => this.setState({
         articles
       }))
+
+    const home = '49074'
+    dato.getPage(home)
+      .then((page) => {
+        console.log(page.title)
+      })
   }
 
   render() {
-    const {articles} = this.state
+    const { articles } = this.state
     console.log(articles)
-    const articlesList = articles.map(({id, title}) =>
+    const articlesList = articles.map(({id, slug, title}) =>
       <li key={id}>
-        <Link to={`/articles/${id}`}>{title}</Link>
+        <Link to={`/articles/${id}/${slug}`}>{title}</Link>
       </li>
     )
 
     return (
-      <ul>
-        {articlesList}
-      </ul>
+      <div>
+        <Helmet title={this.state.articles.title} />
+        <ul>
+          {articlesList}
+        </ul>
+      </div>
     );
   }
 }

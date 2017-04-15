@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import dato from '../dato'
+import Helmet from 'react-helmet';
 
 class Article extends Component {
   state = {
@@ -7,7 +8,7 @@ class Article extends Component {
   }
 
   componentWillMount () {
-    dato.getArticle(this.props.params.articleId)
+    dato.getPage(this.props.params.id)
       .then((article) => this.setState({ article }))
   }
 
@@ -16,6 +17,7 @@ class Article extends Component {
 
     return (
       <div>
+        <Helmet title={title} />
         <h1>{title}</h1>
         <p>{plot}</p>
       </div>

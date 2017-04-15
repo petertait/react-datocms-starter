@@ -1,4 +1,4 @@
-import { SiteClient, Image } from 'datocms-client'
+import { SiteClient } from 'datocms-client'
 
 const DATOCMS_CLIENT = '99cfee362eccae210a4a'
 
@@ -7,13 +7,13 @@ class dato {
     this.client = new SiteClient(DATOCMS_CLIENT)
   }
 
-  getArticles = () => {
-    this.client.items.all({ 'filter[type]': 'article' })
-  }
+  getPage = (id) => (
+    this.client.items.find(id)
+  )
 
-  getArticle = (articleId) => {
-    this.client.items.find(articleId)
-  }
+  getArticles = () => (
+    this.client.items.all({ 'filter[type]': 'article' })
+  )
 }
 
 export default new dato()

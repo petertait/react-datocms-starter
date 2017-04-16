@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import dato from '../dato'
+import React from 'react'
+import { Link } from 'react-router'
 
-const NotFound = ({ children }) => (
+const NotFound = () => (
   <div>
     <h1>Not Found!</h1>
     <Link to='/'>Go Home</Link>

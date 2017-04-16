@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import dato from '../dato'
-import Helmet from 'react-helmet';
+import dato from '../dato/dato'
+import Head from '../components/Head'
 
 class Article extends Component {
-  state = {
-    article: {}
+  constructor() {
+    super()
+    this.state = {
+      article: []
+    }
   }
 
   componentWillMount () {
-    dato.getPage(this.props.params.id)
+    const articleId = this.props.location.state.id
+    dato.getPage(articleId)
       .then((article) => this.setState({ article }))
   }
 
@@ -17,7 +21,7 @@ class Article extends Component {
 
     return (
       <div>
-        <Helmet title={title} />
+        <Head title={title} />
         <h1>{title}</h1>
         <p>{plot}</p>
       </div>

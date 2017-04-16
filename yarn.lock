@@ -4312,6 +4312,10 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-global-state@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-global-state/-/react-global-state-0.1.2.tgz#e573dce6dbf97b280ab029d94cc464dfaffa894b"
+
 react-helmet@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.0.3.tgz#c6da63ee96e83aa7c8fe6d041f28dd288b1b006d"

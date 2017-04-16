@@ -11,8 +11,12 @@ class dato {
     this.client.items.find(id)
   )
 
-  getArticles = () => (
-    this.client.items.all({ 'filter[type]': 'article' })
+  getPages = (id) => (
+    this.client.items.all({ 'filter[id]': id })
+  )
+
+  getItems = (type) => (
+    this.client.items.all({ 'filter[type]': type })
   )
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import dato from '../dato/dato'
-import { home } from '../dato/slug'
+import { about } from '../dato/slug'
 import Head from '../components/Head'
 
-class Home extends Component {
+class About extends Component {
   constructor() {
     super()
     this.state = {
@@ -12,7 +12,7 @@ class Home extends Component {
   }
 
   componentWillMount () {
-    dato.getPage(home)
+    dato.getPage(about)
       .then((page) => this.setState({page}))
   }
 
@@ -28,4 +28,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default About

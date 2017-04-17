@@ -32,7 +32,7 @@ class Blog extends Component {
     return (
       <div>
         <Head title={page.title} />
-        <h1>Blog</h1>
+        <h1>{page.title}</h1>
         <ul>
           {articlesList}
         </ul>

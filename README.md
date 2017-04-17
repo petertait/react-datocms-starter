@@ -9,11 +9,9 @@ You only need to do these three installations once per machine:
 
 1. **Install [Node](https://nodejs.org/en/download/).**
 
-2. **Install [Yarn](https://yarnpkg.com/en/docs/install):**
-### `brew install yarn`
+2. **Install [Yarn](https://yarnpkg.com/en/docs/install):** `brew install yarn`
 
-3. **Install project dependencies.** (In project folder):
-### `yarn`
+3. **Install project dependencies.** (In project folder): `yarn`
 
 ***
 

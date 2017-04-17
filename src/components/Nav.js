@@ -20,8 +20,8 @@ class Nav extends Component {
     // console.log(this.state.pages)
     const { pages } = this.state
 
-    const navList = pages.map(({id, slug, title, menuSite}) => {
-      if (menuSite) {
+    const navList = pages.map(({id, slug, title, globalMenu}) => {
+      if (globalMenu) {
         if(id === home) {
           return (
             <li key={id}>

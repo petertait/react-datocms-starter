@@ -7,6 +7,10 @@ class dato {
     this.client = new SiteClient(DATOCMS_CLIENT)
   }
 
+  getPages = () => (
+    this.client.items.all()
+  )
+
   getPage = (id) => (
     this.client.items.find(id)
   )
@@ -17,7 +21,6 @@ class dato {
 
   getField = (page) => (
     this.client.items.all({
-
       'filter[id]': page
     })
   )

@@ -2,9 +2,9 @@
 
 Simple boilerplate project for a React website linked to a DatoCMS instance.
 
-***
 
 ## Initial installation
+<details>
 You only need to do these three installations once per machine:
 
 1. **Install [Node](https://nodejs.org/en/download/).**
@@ -13,7 +13,8 @@ You only need to do these three installations once per machine:
 
 3. **Install project dependencies.** (In project folder): `yarn`
 
-***
+</details>
+
 
 ## Project commands
 

@@ -17,7 +17,6 @@ class Nav extends Component {
   }
 
   render () {
-    // console.log(this.state.pages)
     const { pages } = this.state
 
     const navList = pages.map(({id, slug, title, globalMenu}) => {
@@ -35,8 +34,10 @@ class Nav extends Component {
             </li>
           )
         }
-      }}
-    )
+      } else {
+        return false
+      }
+    })
 
     return (
       <nav>

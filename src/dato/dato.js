@@ -1,6 +1,6 @@
 import { SiteClient } from 'datocms-client'
 
-const DATOCMS_CLIENT = '99cfee362eccae210a4a'
+export const DATOCMS_CLIENT = '99cfee362eccae210a4a'
 
 class dato {
   constructor () {
@@ -15,8 +15,14 @@ class dato {
     this.client.items.find(id)
   )
 
-  getItems = (type) => (
+  getType = (type) => (
     this.client.items.all({ 'filter[type]': type })
+  )
+
+  getPath = (path) => (
+    this.client.items.all({
+      'filter[query]': path
+    })
   )
 
   getField = (page) => (

@@ -17,7 +17,7 @@ class Blog extends Component {
     dato.getPage(blog)
       .then((page) => this.setState({page}))
 
-    dato.getItems('article')
+    dato.getType('article')
       .then((articles) => this.setState({articles}))
   }
 

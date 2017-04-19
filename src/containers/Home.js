@@ -11,12 +11,12 @@ class Home extends Component {
     }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     dato.getPage(home)
       .then((page) => this.setState({page}))
   }
 
-  render () {
+  render() {
     const { page } = this.state
     return (
       <div>

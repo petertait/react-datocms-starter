@@ -13,7 +13,7 @@ class Blog extends Component {
     }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     dato.getPage(blog)
       .then((page) => this.setState({page}))
 

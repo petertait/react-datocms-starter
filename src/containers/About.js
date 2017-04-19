@@ -11,13 +11,12 @@ class About extends Component {
     }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     dato.getPage(about)
       .then((page) => this.setState({page}))
   }
 
-  render () {
-    console.log(this.state.pages)
+  render() {
     const { page } = this.state
     return (
       <div>

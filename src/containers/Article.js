@@ -13,11 +13,15 @@ class Article extends Component {
     }
   }
 
-  componentWillMount () {
+  getArticle(id) {
+    dato.getPage(id)
+      .then((article) => this.setState({ article }))
+  }
+
+  componentWillMount() {
     const location = this.props.location
     if (location.state !== undefined) {
-      dato.getPage(location.state.id)
-        .then((article) => this.setState({ article }))
+      this.getArticle(location.state.id)
     } else {
       dato.getPages()
         .then((pages) => {
@@ -29,12 +33,9 @@ class Article extends Component {
               return obj['slug'] === articlePath
             })[0]
             if (articleSlug !== undefined) {
-              return (
-                dato.getPage(articleSlug.id)
-                  .then((article) => this.setState({ article }))
-              )
+              this.getArticle(articleSlug.id)
             } else {
-              return browserHistory.push('/error')
+              browserHistory.push('/error')
             }
           })
         }
@@ -42,7 +43,7 @@ class Article extends Component {
     }
   }
 
-  render () {
+  render() {
     const { title } = this.state.article
     return (
       <div>

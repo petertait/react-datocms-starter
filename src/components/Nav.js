@@ -11,12 +11,12 @@ class Nav extends Component {
     }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     dato.getPages()
       .then((pages) => this.setState({pages}))
   }
 
-  render () {
+  render() {
     const { pages } = this.state
     const navList = pages.map(({id, slug, title, globalMenu}) => {
       if (globalMenu) {

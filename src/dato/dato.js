@@ -3,7 +3,7 @@ import { SiteClient } from 'datocms-client'
 export const DATOCMS_CLIENT = '99cfee362eccae210a4a'
 
 class dato {
-  constructor () {
+  constructor() {
     this.client = new SiteClient(DATOCMS_CLIENT)
   }
 

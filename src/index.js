@@ -11,12 +11,12 @@ import NotFound from './containers/NotFound'
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path="about" component={About} />
-      <Route path="blog" component={Blog} />
-      <Route path="blog/:slug" component={Article} />
-      <Route path="*" component={NotFound} />
+      <Route path='about' component={About} />
+      <Route path='blog' component={Blog} />
+      <Route path='blog/:slug' component={Article} />
+      <Route path='*' component={NotFound} />
     </Route>
   </Router>
 ), document.getElementById('root'))

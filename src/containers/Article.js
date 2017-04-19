@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
 import dato from '../dato/dato'
 import Head from '../components/Head'
 import { blog } from '../dato/slug'
@@ -13,27 +14,28 @@ class Article extends Component {
   }
 
   componentWillMount () {
-    if (this.props.location.state !== undefined) {
-      dato.getPage(this.props.location.state.id)
+    const location = this.props.location
+    if (location.state !== undefined) {
+      dato.getPage(location.state.id)
         .then((article) => this.setState({ article }))
     } else {
-      const fullPath = this.props.location.pathname
       dato.getPages()
         .then((pages) => {
         dato.getPage(blog)
           .then((blog) => {
             const blogTitle = '/' + blog.slug + '/'
-            const articlePath = fullPath.replace(blogTitle, '')
-            pages.map(({id, slug}) => {
-              if (slug === articlePath) {
-                return (
-                  dato.getPage(id)
-                    .then((article) => this.setState({ article }))
-                )
-              } else {
-                return false
-              }
-            })
+            const articlePath = location.pathname.replace(blogTitle, '')
+            const articleSlug = pages.filter((obj) => {
+              return obj['slug'] === articlePath
+            })[0]
+            if (articleSlug !== undefined) {
+              return (
+                dato.getPage(articleSlug.id)
+                  .then((article) => this.setState({ article }))
+              )
+            } else {
+              return browserHistory.push('/error')
+            }
           })
         }
       )

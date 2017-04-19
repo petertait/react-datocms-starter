@@ -18,19 +18,18 @@ class Nav extends Component {
 
   render () {
     const { pages } = this.state
-
     const navList = pages.map(({id, slug, title, globalMenu}) => {
       if (globalMenu) {
         if(id === home) {
           return (
             <li key={id}>
-              <Link to={{pathname:`/`, state:{id}}}>{title}</Link>
+              <Link to='/'>{title}</Link>
             </li>
           )
         } else {
           return (
             <li key={id}>
-              <Link to={{pathname:`/${slug}`, state:{id}}}>{title}</Link>
+              <Link to={`/${slug}`}>{title}</Link>
             </li>
           )
         }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Head from '../components/Head'
 
-const NotFound = () => (
+const Error = () => (
   <div>
     <Head title='Page not found' />
     <h1>Not Found!</h1>
@@ -10,4 +10,4 @@ const NotFound = () => (
   </div>
 )
 
-export default NotFound
+export default Error

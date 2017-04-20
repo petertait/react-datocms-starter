@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import dato from '../dato/dato'
-import { blog } from '../dato/slug'
+import dato from '../config/dato'
+import { blog } from '../config/pages'
 import Head from '../components/Head'
 
 class Blog extends Component {

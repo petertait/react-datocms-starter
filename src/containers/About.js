@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import dato from '../dato/dato'
-import { about } from '../dato/slug'
+import dato from '../config/dato'
+import { about } from '../config/pages'
 import Head from '../components/Head'
 
 class About extends Component {

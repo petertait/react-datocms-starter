@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
+import { injectGlobal } from '../config/styles'
 
 const App = ({ children }) => (
-  <main>
+  <injectGlobal>
     <Header />
     {children}
-  </main>
+  </injectGlobal>
 )
 
 export default App

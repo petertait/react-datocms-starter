@@ -18,18 +18,6 @@ class dato {
   getType = (type) => (
     this.client.items.all({ 'filter[type]': type })
   )
-
-  getPath = (path) => (
-    this.client.items.all({
-      'filter[query]': path
-    })
-  )
-
-  getField = (page) => (
-    this.client.items.all({
-      'filter[id]': page
-    })
-  )
 }
 
 export default new dato()

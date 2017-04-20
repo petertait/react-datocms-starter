@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
-import dato from '../dato/dato'
+import dato from '../config/dato'
 import Head from '../components/Head'
-import { blog } from '../dato/slug'
+import { blog } from '../config/pages'
 
 class Article extends Component {
   constructor() {
@@ -26,8 +26,8 @@ class Article extends Component {
         .then((pages) => {
         dato.getPage(blog)
           .then((blog) => {
-            const blogTitle = '/' + blog.slug + '/'
-            const articlePath = location.pathname.replace(blogTitle, '')
+            const blogSlug = '/' + blog.slug + '/'
+            const articlePath = location.pathname.replace(blogSlug, '')
             const articleSlug = pages.filter((obj) => {
               return obj['slug'] === articlePath
             })[0]

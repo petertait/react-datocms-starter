@@ -2,6 +2,10 @@ import { SiteClient } from 'datocms-client'
 
 export const DATOCMS_CLIENT = '99cfee362eccae210a4a'
 
+export const home = '49120'
+export const about = '49210'
+export const blog = '49121'
+
 class dato {
   constructor() {
     this.client = new SiteClient(DATOCMS_CLIENT)
